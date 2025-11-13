@@ -108,6 +108,8 @@ class MyGPT2ModelMultiHeadAttention(nn.Module):
 
     """
 	[N, N_EMBED] -> [N, N_EMBED]
+
+	TODO - Implement KV Caching
 	"""
 
     def forward(self, x):
@@ -283,6 +285,8 @@ def sample(logits, temperature=1.0, top_k=None, top_p=None):
     return sample_indices[torch.multinomial(sample_probs, num_samples=1)]
 
 
+# TODO - Stop on EOS Token
+# TODO - Report TTFT(Time to First Token) and TPS(Token Per Second)
 def generate(model, tokenizer, input_txt, max_length=10, top_k=None, top_p=None):
     tokens = tokenizer(input_txt, return_tensors="pt")["input_ids"][0]
     for _ in range(len(tokens), max_length):
