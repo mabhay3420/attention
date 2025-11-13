@@ -126,7 +126,6 @@ class MyGPT2ModelMultiHeadAttention(nn.Module):
             # [S, D]
             # [S, N_HEAD, HEAD_DIM]
             # [N_HEAD, S, HEAD_DIM]
-            # return X.reshape(S, self.num_heads_, self.head_dim_).
             return X.view(S, self.num_heads_, self.head_dim_).transpose(-3, -2)
 
         # [N_HEAD, S, HEAD_DIM]
