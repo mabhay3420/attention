@@ -240,9 +240,6 @@ class MyGPT2ModelTransformer(nn.Module):
             x = block(x)
 
         x = self.ln_f(x)
-        # NOTE - We will have softmax layer here during training
-        # moved it to a different place so that we can scale logits
-        # using temperature
         return x
 
 
