@@ -1,0 +1,6 @@
+# Core dependencies for download.py and model.py
+requests>=2.31.0
+torch>=2.0.0
+transformers>=4.30.0
+safetensors>=0.4.0
+numpy>=1.24.0

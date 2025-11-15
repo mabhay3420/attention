@@ -311,7 +311,7 @@ if __name__ == "__main__":
     gpt2.lm_head.weight = nn.Parameter(state_dict["wte.weight"])
     gpt2.eval()
     input_txt = "The capital of India is New"
-    output_txt = generate(gpt2, tokenizer, input_txt, max_length=10, top_k=5)
+    output_txt = generate(gpt2, tokenizer, input_txt, max_length=15, top_k=5)
     print("Input: ", input_txt)
     print("Output: ", output_txt)
 
